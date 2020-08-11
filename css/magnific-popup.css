@@ -32,9 +32,12 @@
   } 
 }
 .ml-auto p{
-  font-size: 25px;
+  font-size: 30px;
   margin: 0;
   background-color: rgba(0,0,0,0.33);
+  font-weight: 700;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
 }
 #formacion{
   display: flex;
@@ -45,7 +48,7 @@
   text-align: center;
 }
 #formacion figure img{
-  height: 200px;
+  width: 175px;
   object-fit: cover;
   border-radius: 10px;
   margin: 5px;
