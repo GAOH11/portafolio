@@ -5,6 +5,14 @@
   border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.4);
 }
+.tm-slider-img{
+  color: white;
+  text-decoration: none;
+}
+.tm-slider-img:hover{
+  color: white;
+  text-decoration: none;
+}
 @media (max-width: 678px){
   #foto_perfil{
     top:10px;
