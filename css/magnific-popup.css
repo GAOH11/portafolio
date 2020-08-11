@@ -13,10 +13,22 @@
   color: white;
   text-decoration: none;
 }
-@media (max-width: 678px){
+@media (max-width: 1375px){
   #foto_perfil{
     top:10px;
     height:125px;
+  } 
+}
+@media (max-height: 800px){
+  #foto_perfil{
+    top:10px;
+    height:100px;
+  } 
+}
+@media (max-height: 550px){
+  #foto_perfil{
+    top:10px;
+    height:75px;
   } 
 }
 /* Magnific Popup CSS */
