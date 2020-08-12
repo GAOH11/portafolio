@@ -54,7 +54,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="#contact" class="scrolly" data-bg-img="prepare.png" data-page="#tm-section-4">
+								<a href="#contact" class="scrolly" data-bg-img="prepare.png" data-page="#tm-section-3">
 									<i class="fas fa-comments tm-nav-fa-icon" style="font-size: 30px;"></i>
 									<span>Contacto</span>
 								</a>
@@ -69,6 +69,14 @@
 					<section id="tm-section-1" class="tm-section">
 						<div class="ml-auto">
 							<header class="mb-4" style="text-align:right"><h1 class="tm-text-shadow">ORDOÑEZ HILARIO</h1> <h1>German Aldo</h1></header>
+							<p>Acerca de mi...</p>
+							<div class="mb-5 tm-font-big" style="background-color: #00000054">
+								<ul style="list-style-type: square; margin-left: 30px;">
+									<li>Desarrolador con experiencia en paginas web.</li>
+									<li>Me encanta el mundo del desarrollo web y el mundo de la tecnología.</li>
+									<li></li>
+								</ul>
+							</div>
 							<p>Formación</p>
 							<div class="mb-5 tm-font-big" id="formacion">
 								<figure>
@@ -102,7 +110,7 @@
 					</section>
 
 					<!-- section 3 -->
-					<section id="tm-section-4" class="tm-section">
+					<section id="tm-section-3" class="tm-section">
 						<div class="tm-bg-transparent-black tm-contact-box-pad">
 							<div class="row mb-4">
 								<div class="col-sm-12">
@@ -112,17 +120,21 @@
 							<div class="row tm-page-4-content">
 								<div class="col-md-6 col-sm-12 tm-contact-col">
 									<div class="contact_message">
-										<form action="#contact" method="post" class="contact-form">
+										<form id="myform" method="post" class="contact-form">
 											<div class="form-group">
-												<input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Nombre" required>
+												<input type="text" id="from_name" name="from_name" class="form-control" placeholder="Nombre completo" required>
 											</div>
 											<div class="form-group">
-												<input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Email" required>
+												<input type="email" id="from_email" name="from_email" class="form-control" placeholder="Email" required>
 											</div>
 											<div class="form-group">
-												<textarea id="contact_message" name="contact_message" class="form-control"  placeholder="Mensaje" required></textarea>
+												<input type="tel" id="from_cel" name="from_cel" class="form-control" placeholder="Celular">
 											</div>
-											<button type="submit" class="btn tm-btn-submit tm-btn ml-auto" style="color:#33ccff;border:2px solid #33ccff; width: 100%;">Enviar</button>
+											<div class="form-group">
+												<textarea id="from_message" name="from_message" class="form-control"  placeholder="Mensaje" required></textarea>
+											</div>
+											<div class="g-recaptcha" data-sitekey="6LdQx70ZAAAAADAC4AA_o1raqYNGcEULywR5MPer"></div>
+											<button class="btn tm-btn-submit tm-btn ml-auto" style="color:#33ccff;border:2px solid #33ccff; width: 100%;">Enviar</button>
 										</form>
 									</div>
 								</div>
@@ -146,12 +158,14 @@
 						<a target="_blank" href="https://www.facebook.com/gaordonezh"><i class="fab fa-facebook"></i></a> 
 						<a target="_blank" href="https://www.instagram.com/gaordonezh/"><i class="fab fa-instagram"></i></a> 
 						<a target="_blank" href="https://api.whatsapp.com/send?phone=51902046246&text=Hola!"><i class="fab fa-whatsapp"></i></a>
+						<a target="_blank" href="https://twitter.com/gaordonezh"><i class="fab fa-twitter"></i></a>
 						<a target="_blank" href="https://www.linkedin.com/in/aldoordonez/"><i class="fab fa-linkedin"></i></a>
 						<a target="_blank" href="https://zosma.pe/"><img src="img/zosma__.png" alt="Logo Zosma Team" style="margin-top:-10px" height="27px"></a> 
 					</p>
 				</footer>
 			</div>	<!-- row -->
 		</div>
+		
 		<div id="preload-01"></div>
 		<div id="preload-02"></div>
 		<div id="preload-03"></div>
@@ -160,7 +174,35 @@
 		<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
 		<script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
 		<script type="text/javascript" src="slick/slick.min.js"></script> <!-- Slick Carousel -->
-
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>  
+		<script src="https://www.google.com/recaptcha/api.js"></script>
+		<script>
+		//EMAIL JS ENVIAR CORREOS
+			$(document).ready(function(){
+			emailjs.init("user_maXFpBrVpkWDWuTwec2wO"); 
+			});
+			var myform = $("form#myform");
+			myform.submit(function(event){
+			event.preventDefault();
+			var params = myform.serializeArray().reduce(function(obj, item) {
+				obj[item.name] = item.value;
+				return obj;
+			}, {});
+			// Change to your service ID, or keep using the default service
+			var service_id = "default_service";
+			var template_id = "template_6eDjDuip";
+			myform.find("button").text("Enviando ...");
+			emailjs.send(service_id, template_id, params)
+				.then(function(){ 
+				alert("Mensaje enviado con exito.");
+				window.location = "https://gaoh.netlify.app/";
+				myform.find("button").text("Send");
+				}, function(err) {
+				alert("Error al enviar el mensaje!\r\n Error:\n " + JSON.stringify(err));
+				myform.find("button").text("Send");
+				});
+			return false;});
+		</script>
 		<script>
 
 		var sidebarVisible = false;
@@ -227,7 +269,7 @@
 		    	changePage(currentNavItem);
 
 		    	setupCarousel();
-		    	setupFooter();
+		    	//setupFooter();
 
 		    	// Hide the nav on mobile
 		    	$("#tmSideBar").removeClass("show");
@@ -319,12 +361,12 @@
 			    setupCarousel();
 			    setupNav();
 			    setupNavToggle();
-			    setupFooter();
+			    //setupFooter();
 
 			    // Resize Carousel upon window resize
 			    $(window).resize(function() {
 			    	setupCarousel();
-			    	setupFooter();
+			    	//setupFooter();
 			    });
       		}
 		});

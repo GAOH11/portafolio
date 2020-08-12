@@ -260,14 +260,13 @@ address { font-size: 1rem; }
 }
 
 .footer-link {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    margin-left: 20px;
+    position: fixed;
+    bottom: 0;
     color: white;
     text-align:right;    
     width:100%;
     z-index: 999;
+    background-color: #000000c4;
 }
 .footer-link p a:hover{
     color: #33ccff !important;
