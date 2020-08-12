@@ -10,10 +10,9 @@ body {
     background: #222222;
 }
 
-#preload-01 { background: url(../img/constructive_bg_01.jpg) no-repeat -9999px -9999px; }
-#preload-02 { background: url(../img/constructive_bg_02.jpg) no-repeat -9999px -9999px; }
-#preload-03 { background: url(../img/constructive_bg_03.jpg) no-repeat -9999px -9999px; }
-#preload-04 { background: url(../img/constructive_bg_04.jpg) no-repeat -9999px -9999px; }
+#preload-01 { background: url(../img/pc_night.png) no-repeat -9999px -9999px; }
+#preload-02 { background: url(../img/mockups.png) no-repeat -9999px -9999px; }
+#preload-03 { background: url(../img/prepare.png) no-repeat -9999px -9999px; }
 
 ul { margin: 0; padding: 0; }
 
@@ -270,7 +269,13 @@ address { font-size: 1rem; }
     width:100%;
     z-index: 999;
 }
-
+.footer-link p a:hover{
+    color: #33ccff !important;
+}
+.footer-link p a{
+    font-size: 25px;
+    margin: 0 10px;
+}
 .footer-link.relative { position: relative; }
 
 .tm-copyright-text {
