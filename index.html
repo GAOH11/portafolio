@@ -149,32 +149,32 @@
 							</div>
 							<div class="row tm-page-4-content">
 								<div class="col-md-6 col-sm-12 tm-contact-col">
-									<div class="contact_message">
-										<form id="myform" method="post" class="contact-form">
-											<div class="form-group">
-												<input type="text" id="from_name" name="from_name" class="form-control" placeholder="Nombre completo" required>
-											</div>
-											<div class="form-group">
-												<input type="email" id="from_email" name="from_email" class="form-control" placeholder="Email" required>
-											</div>
-											<div class="form-group">
-												<input type="tel" id="from_cel" name="from_cel" class="form-control" placeholder="Celular">
-											</div>
-											<div class="form-group">
-												<textarea id="from_message" name="from_message" class="form-control"  placeholder="Mensaje" required></textarea>
-											</div>
-											<div class="g-recaptcha" data-sitekey="6LdQx70ZAAAAADAC4AA_o1raqYNGcEULywR5MPer"></div>
-											<button class="btn tm-btn-submit tm-btn ml-auto" style="color:#33ccff;border:2px solid #33ccff; width: 100%;">Enviar</button>
-										</form>
-									</div>
-								</div>
-								<div class="col-md-6 col-sm-12 tm-contact-col">
 									<div class="tm-address-box">
 										<p>¿Tomanos un café?</p>
 										<p>Podemos reunirnos para trabajar en tu proyecto para alcanzar tus objetivos.</p>
 										<address>
 											Ciudad de Huancayo
 										</address>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-12 tm-contact-col">
+									<div class="contact_message">
+										<form id="myform" method="post" class="contact-form">
+											<div class="form-group">
+												<input type="text" id="from_name" name="from_name" class="form-control" placeholder="Nombre completo *" required>
+											</div>
+											<div class="form-group">
+												<input type="email" id="from_email" name="from_email" class="form-control" placeholder="Email *" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$">
+											</div>
+											<div class="form-group">
+												<input type="tel" id="from_cel" name="from_cel" class="form-control" placeholder="Celular">
+											</div>
+											<div class="form-group">
+												<textarea id="from_message" name="from_message" class="form-control"  placeholder="Mensaje *" required></textarea>
+											</div>
+											<div class="g-recaptcha" style="max-width: 100%;overflow:hidden" data-sitekey="6LdQx70ZAAAAADAC4AA_o1raqYNGcEULywR5MPer"></div>
+											<button class="btn tm-btn-submit tm-btn ml-auto">Enviar</button>
+										</form>
 									</div>
 								</div>
 							</div>

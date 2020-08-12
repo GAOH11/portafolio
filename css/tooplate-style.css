@@ -198,6 +198,14 @@ p:last-child { margin-bottom: 0; }
     border-radius: 0;
     display: block;
     padding: 15px 43px;
+    color:#33ccff;
+    border:2px solid #33ccff;
+    width: 100%;
+}
+.tm-btn-submit:hover{
+    background-color: #33ccff;
+    color: white;
+    border:1px solid white;
 }
 
 .slick-dots { bottom: -45px; }
